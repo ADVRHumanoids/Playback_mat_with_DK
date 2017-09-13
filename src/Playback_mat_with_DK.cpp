@@ -47,23 +47,23 @@ bool Playback_mat_with_DK::init_control_plugin( std::string path_to_config_file,
 
 }
 
-void ManipulationPlugin::on_start(double time)
+void Playback_mat_with_DK::on_start(double time)
 {
     /* Save the robot starting config to a class member */
     _start_time = time;
 }
 
-void ManipulationPlugin::on_stop(double time)
+void Playback_mat_with_DK::on_stop(double time)
 {
 }
 
 
-void ManipulationPlugin::control_loop(double time, double period)
+void Playback_mat_with_DK::control_loop(double time, double period)
 {
 
 }
 
-bool ManipulationPlugin::close()
+bool Playback_mat_with_DK::close()
 {
     /* Save logged data to disk */
     _logger->flush();
