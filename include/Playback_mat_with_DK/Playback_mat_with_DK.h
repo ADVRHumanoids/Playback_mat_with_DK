@@ -49,12 +49,24 @@ protected:
     virtual void control_loop(double time, double period);
 
 private:
+    
+    void mat_read_q_motor(int index_col,
+                          Eigen::VectorXd& q_motor);
 
     XBot::RobotInterface::Ptr _robot;
 
     double _start_time;
 
     XBot::MatLogger::Ptr _logger;
+    
+    Eigen::VectorXd _q_motor;
+    std::string _mat_file_name;
+    YAML::Node _root_cfg;
+    mat_t* _mat;
+    matvar_t* _motor_position_mat;
+    const double* _motor_position_data;
+    long unsigned int _motor_position_rows, _motor_position_cols;
+    int _current_index_col;
 
 };
 
